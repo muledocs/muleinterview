@@ -975,13 +975,13 @@
        {
          "id":82,
          "title": "RTF Commands, RTF Troubleshooting? OPS Center (Worker nodes, controller nodes)",
-         "content": "<strong>cmd:</strong> sudo gravity status(It will display the status of the cluster its active or not, healthy and online)",
-         "point1": "<strong>cmd:</strong> sudo gravity plan (to check last update status)",
-         "point2": "<strong>logs path:</strong> cat /var/log/rtf-init.log or cat /var/log/gravity-install.log",
-         "point3": "<strong>cmd:</strong> sudo gravity enter (for accessing gravity container)",
+         "content": "<strong>kubectl get pods</strong>Lists all the pods in the current namespace, providing their status and other details.",
+         "point1": "<strong>kubectl describe pod <podName></strong> Displays detailed information about a specific pod, including events and conditions that can help diagnose issues.",
+         "point2": "<strong>kubectl logs <podName></strong> Fetches the logs from a specific pod, which is crucial for troubleshooting application issues.",
+         "point3": "<strong>kubectl exec -it <podName> -- /bin/bash</strong> Opens an interactive terminal session inside a running pod, allowing you to run commands directly within the container.",
          "point4": "<strong>check cluster health: cmd:</strong> etcdctl cluster-health",
-         "point5":"<strong>journal:</strong> journalctl -p err -r (cmd for read and filter system log messages)",
-          "point6":"<strong>check nodes:</strong> kubectl get nodes (this command provides overview of the nodes present in kubernetes cluster <br /> <strong>cmd:</strong> sudo kubectl get pods -o wide --all-namespaces (to list all pods in namespaces) <br /> <strong>cmd:</strong> sudo kubectl get events -all-namespaces (list out events for all the namespaces in the cluster <br/> <strong>cmd:</strong> kubectl delete pods -n {app_namespace} {app_pod} ",
+         "point5":"<strong>kubectl get nodes</strong> Lists all nodes in the cluster, providing information about their status and resource usage.",
+          "point6":"<strong>kubectl cluster-info</strong> Displays the addresses of the Kubernetes master and services, helping you understand the cluster's configuration ",
           "image": "<img src=\"\" style=\"width: 60%;\"> "
        },
        {
@@ -1294,6 +1294,18 @@
          "point4": "",
          "point5":"",
           "point6":"",
+          "image": "<img src=\"\" style=\"width: 60%;\"> "
+       },
+       {
+         "id":109,
+         "title": "Common Linux Commands?",
+         "content": "<strong>df -h</strong> Displays disk space usage for all mounted filesystems in a human-readable format. This helps monitor available disk space, which is crucial for MuleSoft applications. <br> <strong>ls </strong> list all files <br><strong>cp </strong> to copy <br><strong>mv</strong> To move <br><strong>rm </strong> remove files",
+         "point1": "<strong>top</strong> Provides a dynamic view of system processes, including CPU and memory usage. This is useful for monitoring the performance of MuleSoft applications in real-time.",
+         "point2": "<strong>ps aux | grep mule</strong> Lists all running processes and filters for those related to MuleSoft. This helps verify that the Mule runtime is active and running as expected.",
+         "point3": "<strong>tail -f /path/to/mule/logs/mule.log</strong> Continuously monitors the MuleSoft log file for real-time updates. This is essential for troubleshooting issues as they occur.",
+         "point4": "<strong>chmod and chown</strong> Used to change file permissions and ownership, respectively. These commands are important for ensuring that the MuleSoft runtime has the necessary access to its files and directories.",
+         "point5":"<strong>vi filename </strong> to edit files <br> <strong>click escape key :wq</strong> to save <br> <strong>:q!</strong> to exit without saving",
+          "point6":"<strong>grep 'ERROR' /path/to/mule/logs/mule.log </strong> Searches the Mule log file for any error messages, which can help quickly identify issues that need to be addressed.",
           "image": "<img src=\"\" style=\"width: 60%;\"> "
        }
 
