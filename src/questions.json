@@ -233,7 +233,7 @@
      "content": "Cloudhub integrates two major components ",
      "point1": "1. Platform Sevices <br> 2. Worker Clould <br> These two components and run time manager work together to run mule application in the cloud",
      "point2": "<strong>Platform Services:</strong><br>Cloudhub shares a set of platform services including cloudhub services, alerting, logging, account management vpc, loadbalancer, vpn ",
-     "point3": "<strong>Worker Cloud:</strong><br>It’s a cloud based elastic mule instance that runs integration applications. ",
+     "point3": "<strong>Worker Cloud:</strong><br>It's a cloud based elastic mule instance that runs integration applications. ",
      "point4": "We can use the console to monitor and manage the applications while it is running. ",
      "point5":"(start, stop, restart, delete) the application <br>Monitor & Troubleshooting <br> Updating the application  <br> Managing Logs, insights, notifications, worker monitoring ",
       "point6":"Managing servers, create clusters etc… ",
@@ -484,7 +484,7 @@
     "title": "What is Load Balancer and Types? DLB and SLB",
     "content": "If a single server goes down, load balancer automtically redirects traffic to available servers, if we add a new server to the server group it automatically starts to send requests to it.",
     "point1": "Cloud Hub Provides two types of load balancers <br> 1. Sharead Load Balancer <br> 2. Dedicated Load Balancer",
-    "point2": "<strong>Shared Load Balancer</strong> <br> -> 1. Cloudhub provides default shared load balancer available for all environments <br> -> 2. Shared load balancers don’t allow you to configure custom SSL certificates or proxy rules. <br> -> 3. Additionally, shared load balancers have lower rate limits that help ensure platform stability depends on the region",
+    "point2": "<strong>Shared Load Balancer</strong> <br> -> 1. Cloudhub provides default shared load balancer available for all environments <br> -> 2. Shared load balancers don't allow you to configure custom SSL certificates or proxy rules. <br> -> 3. Additionally, shared load balancers have lower rate limits that help ensure platform stability depends on the region",
     "point3": "<strong>Dedicated Load Balancer</strong><br> -> 1. Handle Load Balancing among the different cloudhub workers that run your application <br> -> 2. We can configure custom SSL configurations and also we can enforce two way authentication <br> -> 3. We can confure proxy rules that map apps to custom domains, this enables to host applications under a single domain",
     "point4": "",
     "point5":"",
@@ -982,7 +982,7 @@
          "point4": "<strong>check cluster health: cmd:</strong> etcdctl cluster-health",
          "point5":"<strong>kubectl get nodes</strong> Lists all nodes in the cluster, providing information about their status and resource usage.",
           "point6":"<strong>kubectl cluster-info</strong> Displays the addresses of the Kubernetes master and services, helping you understand the cluster's configuration ",
-          "image": "<img src=\"\" style=\"width: 60%;\"> "
+          "image": "<img src=\"https://8mwhz4-my.sharepoint.com/personal/nmdrafiq_8mwhz4_onmicrosoft_com/Documents/Required/images/rtf-commands.png?Web=1\" style=\"width: 60%;\"> "
        },
        {
          "id": 83,
@@ -1010,12 +1010,12 @@
        },
        {
          "id":85,
-         "title": "Best Practices for Building Secure APIs with MuleSoft",
+         "title": " Implement Rate Limiting and Throttling",
          "content": "Use a Secure Communication Protocol: https",
          "point1": "Authenticate and Authorize API Requests: Policies like Basic Authentication, OAuth 2.0, and SAML",
          "point2": "Implement Rate Limiting and Throttling: can prevent malicious users or applications from overwhelming your API with requests, which can lead to denial of service (DoS) attacks",
-         "point3": "Encrypt Sensitive Data at Rest",
-         "point4": "Implement Logging and Monitoring",
+         "point3": "Monitor and Log API Activity",
+         "point4": "Avoid Exposing Sensitive Data",
          "point5":"",
           "point6":"",
           "image": "<img src=\"\" style=\"width: 60%;\"> "
@@ -1179,9 +1179,9 @@
        {
          "id":99,
          "title": "onprem cert renewal?",
-         "content": "we can renew from runtime manager (available from 2.8.4 runtime manager version), we can see the cert expiry date",
-         "point1": "Steps: click on servers/clusters tab -> select server name -> click on actions dropdown -> click on renew certificate",
-         "point2": "<strong>Renew Certificate from command line:</strong>",
+         "content": "We can renew it via 2 Methods 1) From Runtime Manager if Cert is Not Expired 2)Via Command Line if Cert is Expired",
+         "point1": "The status for the server must be Running to update its certificate<br /> Steps: click on servers/clusters tab -> select server name -> click on actions dropdown -> click on renew certificate",
+         "point2": "If the Renew Certificate option in the Actions pull-down menu is not available after performing the previous steps, you may need to update your Agent version <br> <strong>Renew Certificate from command line:</strong>",
          "point3": "1. Download the agent-certificate-renewer-{version}.jar -> move the jar file to bin -> need to stop the mule",
          "point4": "2. create a backup of conf folder ",
          "point5":"",
@@ -1215,7 +1215,7 @@
        {
          "id":102,
          "title": "what is mule runtime?",
-         "content": "Mule Runtime is the engine that powers Mule applications, providing the necessary infrastructure for running, managing, and deploying integrations and APIs.",
+         "content": "Mule Runtime is the engine that powers Mule applications, providing the necessary infrastructure for running, managing, and deploying integrations&and&APIs.",
          "point1": "",
          "point2": "",
          "point3": "",
@@ -1307,6 +1307,54 @@
          "point5":"<strong>vi filename </strong> to edit files <br> <strong>click escape key :wq</strong> to save <br> <strong>:q!</strong> to exit without saving",
           "point6":"<strong>grep 'ERROR' /path/to/mule/logs/mule.log </strong> Searches the Mule log file for any error messages, which can help quickly identify issues that need to be addressed.",
           "image": "<img src=\"\" style=\"width: 60%;\"> "
+       },
+       {
+         "id":110,
+         "title": "OKTA setup in anypoint platform?",
+         "content": "We need to get token from OKTA Team",
+         "point1": "naviagate to Runtime Manager -> Client Providers -> Select Default client Provider",
+         "point2": "Need to paste the token into Authorization header field ",
+         "point3": "",
+         "point4": "",
+         "point5": "",
+          "point6":"",
+          "image": "<img src=\"\" style=\"width: 60%;\"> "
+       },
+       {
+         "id":111,
+         "title": "Openshift ROSA?",
+         "content": "From Runtime Manager-> Select Runtime Fabrics -> Create Runtime Fabric -> Select Openshift Container Platform",
+         "point1": "It will provide settings, to create namespace, secrets and some activation data",
+         "point2": "Navigate to openshift platform -> console-openshift.console ",
+         "point3": "Create a namespace in your OpenShift cluster for the Runtime Fabric installation.",
+         "point4": "Once the Runtime Fabric is installed, you can deploy MuleSoft workloads (e.g., APIs or applications) to the OpenShift cluster.",
+         "point5": "",
+          "point6":"",
+          "image": "<img src=\"\" style=\"width: 60%;\"> "
+       },
+       {
+         "id":112,
+         "title": "How to setup ROSA (Red Hat OpenShift Service on AWS) in MuleSoft?",
+         "content": "ROSA setup in MuleSoft involves several steps to integrate Red Hat OpenShift Service on AWS with your MuleSoft Runtime Fabric.",
+         "point1": "<strong>Prerequisites:</strong><br>1. AWS Account with appropriate permissions<br>2. Red Hat OpenShift Service on AWS cluster<br>3. MuleSoft Anypoint Platform account with Runtime Fabric entitlement",
+         "point2": "<strong>Setup Steps:</strong><br>1. Log into Anypoint Platform and navigate to Runtime Manager<br>2. Select Runtime Fabrics and click 'Create Runtime Fabric'<br>3. Choose 'OpenShift Container Platform' as the platform type",
+         "point3": "<strong>Cluster Configuration:</strong><br>1. Configure your ROSA cluster with required resources<br>2. Ensure network connectivity between ROSA and MuleSoft<br>3. Set up necessary security groups and IAM roles",
+         "point4": "<strong>Runtime Fabric Installation:</strong><br>1. Generate activation data from Anypoint Platform<br>2. Apply the activation data to your ROSA cluster<br>3. Deploy Runtime Fabric operator and required components",
+         "point5": "<strong>Post-Installation:</strong><br>1. Verify Runtime Fabric status in Anypoint Platform<br>2. Configure monitoring and logging<br>3. Set up auto-scaling policies if needed",
+         "point6": "<strong>Best Practices:</strong><br>1. Use dedicated namespaces for MuleSoft workloads<br>2. Implement proper resource limits<br>3. Set up monitoring and alerting<br>4. Regular backup and disaster recovery planning",
+         "image": "<img src=\"https://www.redhat.com/cms/managed-files/styles/wysiwyg_full_width/s3/2021-05/ROSA_Architecture.png\" style=\"width: 80%;\">"
+       },
+       {
+         "id":113,
+         "title": "How to setup, patch and renew license for On-Premise Mule Server?",
+         "content": "Complete guide for setting up, patching, and license renewal of On-Premise Mule Server",
+         "point1": "<strong>Initial Setup:</strong><br>1. Download Mule Enterprise Server:<br>   - Visit MuleSoft's download page<br>   - Select appropriate version (e.g., Mule 4.4.0)<br>   - Download the Enterprise Server zip file<br><br>2. Configure MULE_HOME environment variable:<br>   - Set MULE_HOME to installation directory<br>   - Add MULE_HOME/bin to PATH<br>   - Example: export MULE_HOME=/opt/mule<br><br>3. Set up wrapper.conf:<br>   - Navigate to $MULE_HOME/conf<br>   - Configure memory settings:<br>     wrapper.java.maxmemory=2048<br>     wrapper.java.initmemory=1024<br>   - Set ports:<br>     wrapper.port=7777<br>     wrapper.jvm.port=7778<br>   - Configure additional JVM arguments if needed<br><br>4. Configure ports and memory settings:<br>   - Default ports:<br>     - HTTP: 8081<br>     - HTTPS: 8082<br>     - MMC: 7777<br>   - Adjust in wrapper.conf if needed<br><br>5. Start the server:<br>   - Navigate to $MULE_HOME/bin<br>   - Run ./mule start<br>   - Check status with ./mule status<br>   - Verify logs in $MULE_HOME/logs",
+         "point2": "<strong>Patching Process:</strong><br>1. Backup current installation<br>2. Download new patch version<br>3. Stop Mule server<br>4. Replace files in lib directory<br>5. Update wrapper.conf if needed<br>6. Start server and verify patch",
+         "point3": "<strong>License Renewal Steps:</strong><br>1. Stop Mule server<br>2. Backup existing license file<br>3. Download new license from MuleSoft portal<br>4. Place new license in $MULE_HOME/conf<br>5. Start server and verify license",
+         "point4": "<strong>Important Files:</strong><br>1. wrapper.conf - Server configuration<br>2. mule-agent.log - Agent logs<br>3. mule_ee.log - Server logs<br>4. muleLicenseKey.lic - License file",
+         "point5": "<strong>Verification Steps:</strong><br>1. Check server status<br>2. Verify license status in Runtime Manager<br>3. Test application deployments<br>4. Monitor logs for any issues",
+         "point6": "<strong>Best Practices:</strong><br>1. Always backup before changes<br>2. Test in non-production first<br>3. Schedule maintenance windows<br>4. Keep documentation updated<br>5. Monitor system resources",
+         "image": "<img src=\"https://docs.mulesoft.com/runtime-manager/_images/on-premises-server-setup.png\" style=\"width: 80%;\">"
        }
 
        

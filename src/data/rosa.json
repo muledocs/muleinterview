@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "What is ROSA and its key components?",
+    "content": "ROSA (Red Hat OpenShift Service on AWS) is a managed OpenShift service that combines the power of Red Hat OpenShift with the scalability and reliability of AWS.",
+    "point1": "<strong>Key Components:</strong><br>1. OpenShift Container Platform<br>   - Kubernetes-based container platform<br>   - Provides container orchestration<br>   - Manages application lifecycle<br><br>2. AWS Infrastructure<br>   - EC2 instances for worker nodes<br>   - EBS for persistent storage<br>   - VPC for networking<br>   - IAM for access control",
+    "point2": "<strong>Architecture Layers:</strong><br>1. Control Plane<br>   - Managed by Red Hat<br>   - Handles cluster management<br>   - Provides API server<br>   - Manages etcd<br><br>2. Infrastructure Nodes<br>   - Router components<br>   - Registry components<br>   - Monitoring components",
+    "point3": "<strong>Worker Nodes:</strong><br>1. Run application workloads<br>2. Managed by customer<br>3. Auto-scaling capabilities<br>4. Multiple availability zones",
+    "point4": "<strong>Integration with MuleSoft:</strong><br>1. Runtime Fabric deployment<br>2. Containerized Mule applications<br>3. High availability configuration<br>4. Auto-scaling capabilities",
+    "point5": "<strong>Security Features:</strong><br>1. Network isolation<br>2. Role-based access control<br>3. Pod security policies<br>4. Network policies",
+    "point6": "<strong>Monitoring and Logging:</strong><br>1. Prometheus for metrics<br>2. Grafana for visualization<br>3. Elasticsearch for logging<br>4. Alert manager for notifications",
+    "image": "<img src=\"https://www.redhat.com/cms/managed-files/styles/wysiwyg_full_width/s3/2021-05/ROSA_Architecture.png\" style=\"width: 80%;\">"
+  },
+  {
+    "id": 2,
+    "title": "How to manage RTF instances on ROSA?",
+    "content": "Managing Runtime Fabric (RTF) instances on ROSA requires understanding of both MuleSoft and OpenShift concepts.",
+    "point1": "<strong>Installation Steps:</strong><br>1. Prepare ROSA cluster prerequisites<br>2. Configure networking and security groups<br>3. Install RTF operator using Helm charts<br>4. Verify installation and connectivity",
+    "point2": "<strong>Configuration Management:</strong><br>1. Resource allocation and limits<br>2. Network policies and routing<br>3. Storage configuration<br>4. High availability settings",
+    "point3": "<strong>Maintenance Tasks:</strong><br>1. Regular health checks<br>2. Version upgrades<br>3. Backup and restore procedures<br>4. Performance tuning",
+    "point4": "<strong>Troubleshooting:</strong><br>1. Log analysis<br>2. Pod and container diagnostics<br>3. Network connectivity issues<br>4. Resource constraints",
+    "point5": "<strong>Best Practices:</strong><br>1. Regular monitoring<br>2. Automated health checks<br>3. Documentation maintenance<br>4. Change management procedures",
+    "point6": "",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "title": "How to handle deployment and scaling in ROSA?",
+    "content": "Effective deployment and scaling in ROSA involves managing both application deployments and cluster resources.",
+    "point1": "<strong>Deployment Strategies:</strong><br>1. Rolling updates<br>2. Blue-green deployments<br>3. Canary releases<br>4. A/B testing",
+    "point2": "<strong>Scaling Mechanisms:</strong><br>1. Horizontal pod autoscaling<br>2. Vertical pod autoscaling<br>3. Cluster autoscaling<br>4. Manual scaling procedures",
+    "point3": "<strong>Load Balancing:</strong><br>1. Service mesh implementation<br>2. Route configuration<br>3. Network policies<br>4. Traffic management",
+    "point4": "<strong>Resource Management:</strong><br>1. CPU and memory quotas<br>2. Storage allocation<br>3. Network bandwidth<br>4. Pod priority classes",
+    "point5": "<strong>Monitoring and Metrics:</strong><br>1. Resource utilization<br>2. Performance metrics<br>3. Scaling thresholds<br>4. Alert configuration",
+    "point6": "",
+    "image": ""
+  },
+  {
+    "id": 4,
+    "title": "How to configure FlexGateway and manage secrets in ROSA?",
+    "content": "FlexGateway configuration and secrets management are crucial for secure API management in ROSA.",
+    "point1": "<strong>FlexGateway Setup:</strong><br>1. Installation and configuration<br>2. API routing rules<br>3. Security policies<br>4. Performance optimization",
+    "point2": "<strong>Secrets Management:</strong><br>1. Kubernetes secrets<br>2. External secrets providers<br>3. Encryption at rest<br>4. Access control",
+    "point3": "<strong>CI/CD Integration:</strong><br>1. Pipeline configuration<br>2. Automated deployments<br>3. Testing strategies<br>4. Version control",
+    "point4": "<strong>Security Best Practices:</strong><br>1. Least privilege access<br>2. Regular secret rotation<br>3. Audit logging<br>4. Compliance monitoring",
+    "point5": "",
+    "point6": "",
+    "image": ""
+  },
+  {
+    "id": 5,
+    "title": "How to monitor RTF health and set up alerts?",
+    "content": "Comprehensive monitoring and alerting is essential for maintaining healthy RTF instances.",
+    "point1": "<strong>Monitoring Tools:</strong><br>1. Prometheus metrics<br>2. Grafana dashboards<br>3. Custom monitoring solutions<br>4. Log aggregation",
+    "point2": "<strong>Alert Configuration:</strong><br>1. Resource thresholds<br>2. Performance metrics<br>3. Error conditions<br>4. Custom alert rules",
+    "point3": "<strong>Health Checks:</strong><br>1. Application health<br>2. Infrastructure status<br>3. Network connectivity<br>4. Resource utilization",
+    "point4": "<strong>Response Procedures:</strong><br>1. Incident management<br>2. Escalation paths<br>3. Recovery procedures<br>4. Documentation",
+    "point5": "",
+    "point6": "",
+    "image": ""
+  },
+  {
+    "id": 6,
+    "title": "How to ensure security compliance in ROSA?",
+    "content": "Security compliance in ROSA involves multiple layers of security controls and best practices.",
+    "point1": "<strong>Access Control:</strong><br>1. RBAC configuration<br>2. Authentication methods<br>3. Authorization policies<br>4. Identity management",
+    "point2": "<strong>Network Security:</strong><br>1. Network policies<br>2. Firewall rules<br>3. VPC configuration<br>4. Service mesh security",
+    "point3": "<strong>Data Protection:</strong><br>1. Encryption at rest<br>2. Encryption in transit<br>3. Backup security<br>4. Data classification",
+    "point4": "<strong>Compliance Monitoring:</strong><br>1. Audit logging<br>2. Compliance reporting<br>3. Security scanning<br>4. Vulnerability management",
+    "point5": "<strong>Best Practices:</strong><br>1. Regular security updates<br>2. Penetration testing<br>3. Security training<br>4. Incident response planning",
+    "point6": "",
+    "image": ""
+  },
+  {
+    "id": 111,
+    "title": "Openshift ROSA?",
+    "content": "From Runtime Manager-> Select Runtime Fabrics -> Create Runtime Fabric -> Select Openshift Container Platform",
+    "point1": "It will provide settings, to create namespace, secrets and some activation data",
+    "point2": "Navigate to openshift platform -> console-openshift.console ",
+    "point3": "Create a namespace in your OpenShift cluster for the Runtime Fabric installation.",
+    "point4": "Once the Runtime Fabric is installed, you can deploy MuleSoft workloads (e.g., APIs or applications) to the OpenShift cluster.",
+    "point5": "",
+    "point6": "",
+    "image": "<img src=\"\" style=\"width: 60%;\">"
+  },
+  {
+    "id": 112,
+    "title": "How to setup ROSA (Red Hat OpenShift Service on AWS) in MuleSoft?",
+    "content": "ROSA setup in MuleSoft involves several steps to integrate Red Hat OpenShift Service on AWS with your MuleSoft Runtime Fabric.",
+    "point1": "<strong>Prerequisites:</strong><br>1. AWS Account with appropriate permissions<br>2. Red Hat OpenShift Service on AWS cluster<br>3. MuleSoft Anypoint Platform account with Runtime Fabric entitlement",
+    "point2": "<strong>Setup Steps:</strong><br>1. Log into Anypoint Platform and navigate to Runtime Manager<br>2. Select Runtime Fabrics and click 'Create Runtime Fabric'<br>3. Choose 'OpenShift Container Platform' as the platform type",
+    "point3": "<strong>Cluster Configuration:</strong><br>1. Configure your ROSA cluster with required resources<br>2. Ensure network connectivity between ROSA and MuleSoft<br>3. Set up necessary security groups and IAM roles",
+    "point4": "<strong>Runtime Fabric Installation:</strong><br>1. Generate activation data from Anypoint Platform<br>2. Apply the activation data to your ROSA cluster<br>3. Deploy Runtime Fabric operator and required components",
+    "point5": "<strong>Post-Installation:</strong><br>1. Verify Runtime Fabric status in Anypoint Platform<br>2. Configure monitoring and logging<br>3. Set up auto-scaling policies if needed",
+    "point6": "<strong>Best Practices:</strong><br>1. Use dedicated namespaces for MuleSoft workloads<br>2. Implement proper resource limits<br>3. Set up monitoring and alerting<br>4. Regular backup and disaster recovery planning",
+    "image": "<img src=\"https://www.redhat.com/cms/managed-files/styles/wysiwyg_full_width/s3/2021-05/ROSA_Architecture.png\" style=\"width: 80%;\">"
+  }
+] 
