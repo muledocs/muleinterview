@@ -1227,14 +1227,14 @@
        {
          "id":103,
          "title": "Difference between cloudhub 1.0 and 2.0?",
-         "content": "as part of infrastructure 1. CloudHub 1.0 VPC peering and direct connect have been deprecated in CloudHub 2.0",
-         "point1": "Further, when you delete a private space that has a transit gateway attached, the transit gateway is preserved, and you can reattach it to a different private space.",
-         "point2": "Unlike VPCs in CloudHub 1.0, you can associate a private space with multiple environments ",
+         "content": "",
+         "point1": "",
+         "point2": "Unlike VPCs in CloudHub 1.0, we can associate a private space with multiple environments ",
          "point3": "HTTP and HTTPS traffic uses port 8081",
-         "point4": "More granular vCore allocation options you can now have the option to assign 0.5, 1.5, 2.5, 3.5 and 4 vCores",
+         "point4": "More granular vCore allocation options we can now have the option to assign 0.5, 1.5, 2.5, 3.5 and 4 vCores",
          "point5":"",
           "point6":"",
-          "image": "<img src=\"\" style=\"width: 60%;\"> "
+          "image": "<img src=\"https://github.com/muledocs/mulenew/blob/main/public/cloudhubv1-vs-v2.png?raw=true\" style=\"width: 100%;\">"
        },
        {
          "id":104,
