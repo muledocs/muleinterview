@@ -1333,7 +1333,7 @@
           "image": "<img src=\"\" style=\"width: 60%;\"> "
        },
        {
-         "id":112,
+         "id":1121,
          "title": "How to setup ROSA (Red Hat OpenShift Service on AWS) in MuleSoft?",
          "content": "ROSA setup in MuleSoft involves several steps to integrate Red Hat OpenShift Service on AWS with your MuleSoft Runtime Fabric.",
          "point1": "<strong>Prerequisites:</strong><br>1. AWS Account with appropriate permissions<br>2. Red Hat OpenShift Service on AWS cluster<br>3. MuleSoft Anypoint Platform account with Runtime Fabric entitlement",
@@ -1345,7 +1345,7 @@
          "image": "<img src=\"https://www.redhat.com/cms/managed-files/styles/wysiwyg_full_width/s3/2021-05/ROSA_Architecture.png\" style=\"width: 80%;\">"
        },
        {
-         "id":113,
+         "id":1131,
          "title": "How to setup, patch and renew license for On-Premise Mule Server?",
          "content": "Complete guide for setting up, patching, and license renewal of On-Premise Mule Server",
          "point1": "<strong>Initial Setup:</strong><br>1. Download Mule Enterprise Server:<br>   - Visit MuleSoft's download page<br>   - Select appropriate version (e.g., Mule 4.4.0)<br>   - Download the Enterprise Server zip file<br><br>2. Configure MULE_HOME environment variable:<br>   - Set MULE_HOME to installation directory<br>   - Add MULE_HOME/bin to PATH<br>   - Example: export MULE_HOME=/opt/mule<br><br>3. Set up wrapper.conf:<br>   - Navigate to $MULE_HOME/conf<br>   - Configure memory settings:<br>     wrapper.java.maxmemory=2048<br>     wrapper.java.initmemory=1024<br>   - Set ports:<br>     wrapper.port=7777<br>     wrapper.jvm.port=7778<br>   - Configure additional JVM arguments if needed<br><br>4. Configure ports and memory settings:<br>   - Default ports:<br>     - HTTP: 8081<br>     - HTTPS: 8082<br>     - MMC: 7777<br>   - Adjust in wrapper.conf if needed<br><br>5. Start the server:<br>   - Navigate to $MULE_HOME/bin<br>   - Run ./mule start<br>   - Check status with ./mule status<br>   - Verify logs in $MULE_HOME/logs",
@@ -1355,6 +1355,42 @@
          "point5": "<strong>Verification Steps:</strong><br>1. Check server status<br>2. Verify license status in Runtime Manager<br>3. Test application deployments<br>4. Monitor logs for any issues",
          "point6": "<strong>Best Practices:</strong><br>1. Always backup before changes<br>2. Test in non-production first<br>3. Schedule maintenance windows<br>4. Keep documentation updated<br>5. Monitor system resources",
          "image": "<img src=\"https://docs.mulesoft.com/runtime-manager/_images/on-premises-server-setup.png\" style=\"width: 80%;\">"
+       },
+       {
+         "id": 1111,
+         "title": "What is ROSA and its key components?",
+         "content": "ROSA (Red Hat OpenShift Service on AWS) is a managed OpenShift service that combines the power of Red Hat OpenShift with the scalability and reliability of AWS.",
+         "point1": "<strong>Key Components:</strong><br>1. OpenShift Container Platform<br>   - Kubernetes-based container platform<br>   - Provides container orchestration<br>   - Manages application lifecycle<br><br>2. AWS Infrastructure<br>   - EC2 instances for worker nodes<br>   - EBS for persistent storage<br>   - VPC for networking<br>   - IAM for access control",
+         "point2": "<strong>Architecture Layers:</strong><br>1. Control Plane<br>   - Managed by Red Hat<br>   - Handles cluster management<br>   - Provides API server<br>   - Manages etcd<br><br>2. Infrastructure Nodes<br>   - Router components<br>   - Registry components<br>   - Monitoring components",
+         "point3": "<strong>Worker Nodes:</strong><br>1. Run application workloads<br>2. Managed by customer<br>3. Auto-scaling capabilities<br>4. Multiple availability zones",
+         "point4": "<strong>Integration with MuleSoft:</strong><br>1. Runtime Fabric deployment<br>2. Containerized Mule applications<br>3. High availability configuration<br>4. Auto-scaling capabilities",
+         "point5": "<strong>Security Features:</strong><br>1. Network isolation<br>2. Role-based access control<br>3. Pod security policies<br>4. Network policies",
+         "point6": "<strong>Monitoring and Logging:</strong><br>1. Prometheus for metrics<br>2. Grafana for visualization<br>3. Elasticsearch for logging<br>4. Alert manager for notifications",
+         "image": "<img src=\"https://www.redhat.com/cms/managed-files/styles/wysiwyg_full_width/s3/2021-05/ROSA_Architecture.png\" style=\"width: 80%;\">"
+       },
+       {
+         "id": 112,
+         "title": "What are the key RTF troubleshooting commands when the cluster is in a degraded state?",
+         "content": "When Runtime Fabric cluster is in a degraded state, these commands help diagnose and resolve issues.",
+         "point1": "<strong>Basic System Commands:</strong><br>1. Check current directory: <code>pwd</code><br>2. List directory contents: <code>dir</code>",
+         "point2": "<strong>Kubernetes Version and Status:</strong><br>1. Check Kubernetes version: <code>kubectl version</code><br>2. Check RTF status: <code>rtfctl status</code>",
+         "point3": "<strong>Pod Management:</strong><br>1. List all pods in RTF namespace: <code>kubectl get pods -n rtf</code><br>2. Detailed pod information: <code>kubectl get pods -n rtf -owide</code><br>3. Delete problematic pod: <code>kubectl delete pod -n rtf agent-5dcd7f55f9-5pct6</code><br>4. Delete all agent pods: <code>oc -n rtf delete po -l app=agent</code>",
+         "point4": "<strong>Logs and Reports:</strong><br>1. View pod logs: <code>kubectl logs -n rtf agent-5dcd7f55f9-jt42d app | more</code><br>2. Generate diagnostic report: <code>kubectl report</code> or <code>rtfctl report</code><br>3. Save logs to file: <code>kubectl logs -n rtf agent-5dcd7f55f9-5pct6 >agent.log</code>",
+         "point5": "<strong>Cluster-wide Information:</strong><br>1. List all pods across namespaces: <code>kubectl get pods -A | more</code><br>2. List all namespaces: <code>kubectl get ns</code>",
+         "point6": "<strong>Network Connectivity:</strong><br>1. Test outbound connectivity<br>2. Verify ROSA login and access",
+         "image": ""
+       },
+       {
+         "id": 113,
+         "title": "How to optimize JVM, GC, and MuleSoft runtime performance?",
+         "content": "Performance tuning of JVM, Garbage Collection, and MuleSoft runtime is crucial for optimal application performance.",
+         "point1": "<strong>JVM Tuning Parameters:</strong><br>1. Memory settings:<br>   - Xms: Initial heap size<br>   - Xmx: Maximum heap size<br>   - Xmn: Young generation size<br>   - XX:MaxMetaspaceSize: Metaspace limit<br>2. Thread settings:<br>   - XX:ParallelGCThreads<br>   - XX:ConcGCThreads<br>   - XX:CICompilerCount",
+         "point2": "<strong>Garbage Collection Optimization:</strong><br>1. GC Algorithm selection:<br>   - G1GC (Recommended)<br>   - Parallel GC<br>   - CMS GC<br>2. GC tuning parameters:<br>   - XX:MaxGCPauseMillis<br>   - XX:G1HeapRegionSize<br>   - XX:InitiatingHeapOccupancyPercent<br>   - XX:G1ReservePercent",
+         "point3": "<strong>MuleSoft Runtime Tuning:</strong><br>1. Thread pool configuration:<br>   - maxThreadsActive<br>   - minThreadsActive<br>   - threadIdleTimeout<br>2. Object store settings:<br>   - maxEntries<br>   - entryTTL<br>   - expirationInterval",
+         "point4": "<strong>Monitoring and Metrics:</strong><br>1. GC logs analysis:<br>   - XX:+PrintGCDetails<br>   - XX:+PrintGCDateStamps<br>   - Xloggc:filename<br>2. Performance metrics:<br>   - Heap usage<br>   - GC pause times<br>   - Thread pool utilization",
+         "point5": "<strong>Best Practices:</strong><br>1. Regular monitoring<br>2. Incremental tuning<br>3. Load testing<br>4. Performance baselining<br>5. Documentation of changes",
+         "point6": "<strong>Troubleshooting Common Issues:</strong><br>1. Memory leaks<br>2. GC overhead<br>3. Thread pool exhaustion<br>4. Object store performance<br>5. CPU utilization spikes",
+         "image": ""
        }
 
        

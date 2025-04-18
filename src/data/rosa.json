@@ -12,18 +12,6 @@
     "image": "<img src=\"https://www.redhat.com/cms/managed-files/styles/wysiwyg_full_width/s3/2021-05/ROSA_Architecture.png\" style=\"width: 80%;\">"
   },
   {
-    "id": 2,
-    "title": "How to manage RTF instances on ROSA?",
-    "content": "Managing Runtime Fabric (RTF) instances on ROSA requires understanding of both MuleSoft and OpenShift concepts.",
-    "point1": "<strong>Installation Steps:</strong><br>1. Prepare ROSA cluster prerequisites<br>2. Configure networking and security groups<br>3. Install RTF operator using Helm charts<br>4. Verify installation and connectivity",
-    "point2": "<strong>Configuration Management:</strong><br>1. Resource allocation and limits<br>2. Network policies and routing<br>3. Storage configuration<br>4. High availability settings",
-    "point3": "<strong>Maintenance Tasks:</strong><br>1. Regular health checks<br>2. Version upgrades<br>3. Backup and restore procedures<br>4. Performance tuning",
-    "point4": "<strong>Troubleshooting:</strong><br>1. Log analysis<br>2. Pod and container diagnostics<br>3. Network connectivity issues<br>4. Resource constraints",
-    "point5": "<strong>Best Practices:</strong><br>1. Regular monitoring<br>2. Automated health checks<br>3. Documentation maintenance<br>4. Change management procedures",
-    "point6": "",
-    "image": ""
-  },
-  {
     "id": 3,
     "title": "How to handle deployment and scaling in ROSA?",
     "content": "Effective deployment and scaling in ROSA involves managing both application deployments and cluster resources.",
@@ -32,18 +20,6 @@
     "point3": "<strong>Load Balancing:</strong><br>1. Service mesh implementation<br>2. Route configuration<br>3. Network policies<br>4. Traffic management",
     "point4": "<strong>Resource Management:</strong><br>1. CPU and memory quotas<br>2. Storage allocation<br>3. Network bandwidth<br>4. Pod priority classes",
     "point5": "<strong>Monitoring and Metrics:</strong><br>1. Resource utilization<br>2. Performance metrics<br>3. Scaling thresholds<br>4. Alert configuration",
-    "point6": "",
-    "image": ""
-  },
-  {
-    "id": 4,
-    "title": "How to configure FlexGateway and manage secrets in ROSA?",
-    "content": "FlexGateway configuration and secrets management are crucial for secure API management in ROSA.",
-    "point1": "<strong>FlexGateway Setup:</strong><br>1. Installation and configuration<br>2. API routing rules<br>3. Security policies<br>4. Performance optimization",
-    "point2": "<strong>Secrets Management:</strong><br>1. Kubernetes secrets<br>2. External secrets providers<br>3. Encryption at rest<br>4. Access control",
-    "point3": "<strong>CI/CD Integration:</strong><br>1. Pipeline configuration<br>2. Automated deployments<br>3. Testing strategies<br>4. Version control",
-    "point4": "<strong>Security Best Practices:</strong><br>1. Least privilege access<br>2. Regular secret rotation<br>3. Audit logging<br>4. Compliance monitoring",
-    "point5": "",
     "point6": "",
     "image": ""
   },
@@ -60,39 +36,51 @@
     "image": ""
   },
   {
-    "id": 6,
-    "title": "How to ensure security compliance in ROSA?",
-    "content": "Security compliance in ROSA involves multiple layers of security controls and best practices.",
-    "point1": "<strong>Access Control:</strong><br>1. RBAC configuration<br>2. Authentication methods<br>3. Authorization policies<br>4. Identity management",
-    "point2": "<strong>Network Security:</strong><br>1. Network policies<br>2. Firewall rules<br>3. VPC configuration<br>4. Service mesh security",
-    "point3": "<strong>Data Protection:</strong><br>1. Encryption at rest<br>2. Encryption in transit<br>3. Backup security<br>4. Data classification",
-    "point4": "<strong>Compliance Monitoring:</strong><br>1. Audit logging<br>2. Compliance reporting<br>3. Security scanning<br>4. Vulnerability management",
-    "point5": "<strong>Best Practices:</strong><br>1. Regular security updates<br>2. Penetration testing<br>3. Security training<br>4. Incident response planning",
+    "id": 7,
+    "title": "What is Ingress?",
+    "content": "Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend.",
+    "point1": "<strong>Key Features:</strong><br>1. Externally-reachable URLs configuration<br>2. Load balance traffic<br>3. SSL/TLS termination<br>4. Name-based virtual hosting",
+    "point2": "<strong>Benefits:</strong><br>1. Centralized routing management<br>2. Simplified access control<br>3. Enhanced security through SSL/TLS<br>4. Efficient traffic distribution",
+    "point3": "<strong>Common Use Cases:</strong><br>1. API Gateway routing<br>2. Web application routing<br>3. Microservices access<br>4. SSL termination",
+    "point4": "<strong>Configuration:</strong><br>1. Path-based routing<br>2. Host-based routing<br>3. TLS configuration<br>4. Backend service definition",
+    "point5": "",
     "point6": "",
+    "image": "<img src=\"https://docs.mulesoft.com/runtime-fabric/latest/_images/rtf-ingress-endpoint.png\" style=\"width: 80%;\">"
+  },
+  {
+    "id": 8,
+    "title": "How to setup MuleSoft Runtime Fabric on ROSA?",
+    "content": "A comprehensive guide to set up and configure MuleSoft Runtime Fabric on Red Hat OpenShift Service on AWS (ROSA). This setup enables you to run Mule applications in a managed OpenShift environment.",
+    "point1": "<strong>Prerequisites:</strong><br>1. Anypoint Platform account with Runtime Fabric entitlement<br>2. AWS account with appropriate permissions<br>3. Red Hat OpenShift Service on AWS (ROSA) cluster<br>4. OpenShift CLI (oc) installed<br>5. Helm CLI installed<br>6. kubectl CLI tool<br>7. Minimum cluster requirements:<br>   - Kubernetes version 1.19 or later<br>   - 3 worker nodes minimum<br>   - 4 vCPU per node minimum<br>   - 16GB RAM per node minimum",
+    "point2": "<strong>Step 1: Prepare Your Environment</strong><br>1. Set up ROSA cluster:<br>   - Create cluster through Red Hat Cloud Console<br>   - Ensure proper networking configuration<br>   - Configure AWS VPC and subnets<br>2. Install required tools:<br>   <code>brew install openshift-cli</code><br>   <code>brew install helm</code><br>3. Configure cluster access:<br>   <code>oc login --token={token} --server={server-url}</code><br>4. Create dedicated namespace:<br>   <code>oc new-project rtf</code>",
+    "point3": "<strong>Step 2: Runtime Fabric Configuration</strong><br>1. In Anypoint Platform:<br>   - Navigate to Runtime Manager → Runtime Fabrics<br>   - Click 'Create Runtime Fabric'<br>   - Select 'Red Hat OpenShift Container Platform'<br>   - Name your Runtime Fabric<br>   - Choose environment and activation method<br>2. Create necessary resources:<br>   <code>oc create serviceaccount rtf-agent</code><br>   <code>oc adm policy add-scc-to-user privileged -z rtf-agent</code><br>3. Configure secrets:<br>   <code>oc create secret generic rtf-agent-secret \\<br>   --from-literal=ACTIVATION_DATA='your-activation-data' \\<br>   --from-literal=RTFCTL_LICENSE='your-license'</code>",
+    "point4": "<strong>Step 3: Installation Process</strong><br>1. Add Helm repository:<br>   <code>helm repo add rtf https://anypoint.mulesoft.com/kubernetes/helm/</code><br>2. Create values.yaml:<br>```yaml\nplatform:\n  client_id: 'your_client_id'\n  client_secret: 'your_client_secret'\n  environment: 'your_environment'\nactivationData: 'your_activation_data'\nrtfVersion: '1.x.x'\n```<br>3. Install Runtime Fabric:<br>   <code>helm install rtf rtf/rtf --namespace rtf -f values.yaml</code><br>4. Monitor installation:<br>   <code>oc get pods -n rtf -w</code>",
+    "point5": "<strong>Step 4: Post-Installation Tasks</strong><br>1. Verify installation status:<br>   - Check pod status: <code>oc get pods -n rtf</code><br>   - Verify services: <code>oc get services -n rtf</code><br>   - Check deployments: <code>oc get deployments -n rtf</code><br>2. Configure monitoring:<br>   - Set up Prometheus integration<br>   - Configure Grafana dashboards<br>   - Enable alerting<br>3. Network configuration:<br>   - Configure ingress controller<br>   - Set up TLS certificates<br>   - Define network policies",
+    "point6": "<strong>Troubleshooting Guide</strong><br>1. Common issues:<br>   - Pod scheduling failures<br>   - Resource constraints<br>   - Network connectivity issues<br>   - Authentication problems<br>2. Debug commands:<br>   <code>oc describe pod &lt;pod-name&gt; -n rtf</code><br>   <code>oc logs &lt;pod-name&gt; -n rtf</code><br>   <code>oc get events -n rtf</code><br>3. Health checks:<br>   - Verify node status<br>   - Check resource quotas<br>   - Monitor pod metrics",
+    "image": "<div style='display: flex; flex-direction: column; gap: 20px;'><img src='https://developer.mulesoft.com/content/media/tutorials/runtime-fabric/rtf-openshift/app-pull-secret.png' style='width: 100%; margin-bottom: 20px;' alt='RTF Architecture'><img src='https://developer.mulesoft.com/content/media/tutorials/runtime-fabric/rtf-openshift/app-pull-secret.png' style='width: 100%; margin-bottom: 20px;' alt='RTF Deployment'><img src='https://developer.mulesoft.com/content/media/tutorials/runtime-fabric/rtf-openshift/red-hat-activate.png' style='width: 100%;' alt='RTF Components'></div>"
+  },
+  {
+    "id": 9,
+    "title": "What are the key RTF troubleshooting commands when the cluster is in a degraded state?",
+    "content": "When Runtime Fabric cluster is in a degraded state, these commands help diagnose and resolve issues.",
+    "point1": "<strong>Basic System Commands:</strong><br>1. Check current directory: <code>pwd</code><br>2. List directory contents: <code>dir</code>",
+    "point2": "<strong>Kubernetes Version and Status:</strong><br>1. Check Kubernetes version: <code>kubectl version</code><br>2. Check RTF status: <code>rtfctl status</code>",
+    "point3": "<strong>Pod Management:</strong><br>1. List all pods in RTF namespace: <code>kubectl get pods -n rtf</code><br>2. Detailed pod information: <code>kubectl get pods -n rtf -owide</code><br>3. Delete problematic pod: <code>kubectl delete pod -n rtf agent-5dcd7f55f9-5pct6</code><br>4. Delete all agent pods: <code>oc -n rtf delete po -l app=agent</code>",
+    "point4": "<strong>Logs and Reports:</strong><br>1. View pod logs: <code>kubectl logs -n rtf agent-5dcd7f55f9-jt42d app | more</code><br>2. Generate diagnostic report: <code>kubectl report</code> or <code>rtfctl report</code><br>3. Save logs to file: <code>kubectl logs -n rtf agent-5dcd7f55f9-5pct6 >agent.log</code>",
+    "point5": "<strong>Cluster-wide Information:</strong><br>1. List all pods across namespaces: <code>kubectl get pods -A | more</code><br>2. List all namespaces: <code>kubectl get ns</code>",
+    "point6": "<strong>Network Connectivity:</strong><br>1. Test outbound connectivity<br>2. Verify ROSA login and access",
     "image": ""
   },
   {
-    "id": 111,
-    "title": "Openshift ROSA?",
-    "content": "From Runtime Manager-> Select Runtime Fabrics -> Create Runtime Fabric -> Select Openshift Container Platform",
-    "point1": "It will provide settings, to create namespace, secrets and some activation data",
-    "point2": "Navigate to openshift platform -> console-openshift.console ",
-    "point3": "Create a namespace in your OpenShift cluster for the Runtime Fabric installation.",
-    "point4": "Once the Runtime Fabric is installed, you can deploy MuleSoft workloads (e.g., APIs or applications) to the OpenShift cluster.",
-    "point5": "",
-    "point6": "",
-    "image": "<img src=\"\" style=\"width: 60%;\">"
-  },
-  {
-    "id": 112,
-    "title": "How to setup ROSA (Red Hat OpenShift Service on AWS) in MuleSoft?",
-    "content": "ROSA setup in MuleSoft involves several steps to integrate Red Hat OpenShift Service on AWS with your MuleSoft Runtime Fabric.",
-    "point1": "<strong>Prerequisites:</strong><br>1. AWS Account with appropriate permissions<br>2. Red Hat OpenShift Service on AWS cluster<br>3. MuleSoft Anypoint Platform account with Runtime Fabric entitlement",
-    "point2": "<strong>Setup Steps:</strong><br>1. Log into Anypoint Platform and navigate to Runtime Manager<br>2. Select Runtime Fabrics and click 'Create Runtime Fabric'<br>3. Choose 'OpenShift Container Platform' as the platform type",
-    "point3": "<strong>Cluster Configuration:</strong><br>1. Configure your ROSA cluster with required resources<br>2. Ensure network connectivity between ROSA and MuleSoft<br>3. Set up necessary security groups and IAM roles",
-    "point4": "<strong>Runtime Fabric Installation:</strong><br>1. Generate activation data from Anypoint Platform<br>2. Apply the activation data to your ROSA cluster<br>3. Deploy Runtime Fabric operator and required components",
-    "point5": "<strong>Post-Installation:</strong><br>1. Verify Runtime Fabric status in Anypoint Platform<br>2. Configure monitoring and logging<br>3. Set up auto-scaling policies if needed",
-    "point6": "<strong>Best Practices:</strong><br>1. Use dedicated namespaces for MuleSoft workloads<br>2. Implement proper resource limits<br>3. Set up monitoring and alerting<br>4. Regular backup and disaster recovery planning",
-    "image": "<img src=\"https://www.redhat.com/cms/managed-files/styles/wysiwyg_full_width/s3/2021-05/ROSA_Architecture.png\" style=\"width: 80%;\">"
+    "id": 10,
+    "title": "How to optimize JVM, GC, and MuleSoft runtime performance?",
+    "content": "Performance tuning of JVM, Garbage Collection, and MuleSoft runtime is crucial for optimal application performance.",
+    "point1": "<strong>JVM Tuning Parameters:</strong><br>1. Memory settings:<br>   - Xms: Initial heap size<br>   - Xmx: Maximum heap size<br>   - Xmn: Young generation size<br>   - XX:MaxMetaspaceSize: Metaspace limit<br>2. Thread settings:<br>   - XX:ParallelGCThreads<br>   - XX:ConcGCThreads<br>   - XX:CICompilerCount",
+    "point2": "<strong>Garbage Collection Optimization:</strong><br>1. GC Algorithm selection:<br>   - G1GC (Recommended)<br>   - Parallel GC<br>   - CMS GC<br>2. GC tuning parameters:<br>   - XX:MaxGCPauseMillis<br>   - XX:G1HeapRegionSize<br>   - XX:InitiatingHeapOccupancyPercent<br>   - XX:G1ReservePercent",
+    "point3": "<strong>MuleSoft Runtime Tuning:</strong><br>1. Thread pool configuration:<br>   - maxThreadsActive<br>   - minThreadsActive<br>   - threadIdleTimeout<br>2. Object store settings:<br>   - maxEntries<br>   - entryTTL<br>   - expirationInterval",
+    "point4": "<strong>Monitoring and Metrics:</strong><br>1. GC logs analysis:<br>   - XX:+PrintGCDetails<br>   - XX:+PrintGCDateStamps<br>   - Xloggc:filename<br>2. Performance metrics:<br>   - Heap usage<br>   - GC pause times<br>   - Thread pool utilization",
+    "point5": "<strong>Best Practices:</strong><br>1. Regular monitoring<br>2. Incremental tuning<br>3. Load testing<br>4. Performance baselining<br>5. Documentation of changes",
+    "point6": "<strong>Troubleshooting Common Issues:</strong><br>1. Memory leaks<br>2. GC overhead<br>3. Thread pool exhaustion<br>4. Object store performance<br>5. CPU utilization spikes",
+    "image": ""
   }
 ] 
