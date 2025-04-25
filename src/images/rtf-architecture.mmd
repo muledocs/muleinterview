@@ -1,0 +1,35 @@
+graph TB
+    subgraph AWS["AWS ROSA Cluster"]
+        subgraph RTF["Runtime Fabric"]
+            AM["Activation Engine"]
+            RT["Runtime Plane"]
+            AM --> RT
+            
+            subgraph Components["Core Components"]
+                AMQP["AMQP Service"]
+                Redis["Redis Cache"]
+                Log["Log Service"]
+                Metrics["Metrics Service"]
+            end
+            
+            RT --> Components
+        end
+        
+        subgraph Infrastructure["Infrastructure"]
+            OCP["OpenShift Container Platform"]
+            Storage["Persistent Storage"]
+            Network["Network Layer"]
+            OCP --> Storage
+            OCP --> Network
+        end
+        
+        RTF --> Infrastructure
+    end
+    
+    subgraph Control["Control Plane"]
+        CP["Anypoint Control Plane"]
+        RTM["Runtime Manager"]
+        CP --> RTM
+    end
+    
+    Control -.-> RTF 

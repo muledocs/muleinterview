@@ -22,6 +22,13 @@ const QuestionSearch = () => {
     searchInputRef.current.focus();
   };
 
+  const scrollToQuestion = (id) => {
+    const element = document.getElementById(`question-${id}`);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const scrollFunction = () => {
     const mybutton = document.getElementById("myBtn");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -64,8 +71,15 @@ const QuestionSearch = () => {
       {showAll && (
         <div className="title-list">
           {questions.map((question) => (
-            <a key={question.id} href={`#question-${question.id}`}>
-              {question.title}
+            <a
+              key={question.id}
+              href={`#question-${question.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToQuestion(question.id);
+              }}
+            >
+              {question.id}. {question.title}
             </a>
           ))}
         </div>
@@ -73,7 +87,7 @@ const QuestionSearch = () => {
       <div>
         {questionsToDisplay.map((question) => (
           <div key={question.id} id={`question-${question.id}`} className="question-details">
-            <h2>{question.title}</h2>
+            <h2>{question.id}. {question.title}</h2>
             <p dangerouslySetInnerHTML={{ __html: question.content }} ></p>
             {[1, 2, 3, 4, 5, 6].map((num) =>
               question[`point${num}`] ? (

@@ -973,18 +973,6 @@
           "image": "<img src=\"\" style=\"width: 60%;\"> "
        },
        {
-         "id":82,
-         "title": "RTF Commands, RTF Troubleshooting? OPS Center (Worker nodes, controller nodes)",
-         "content": "<strong>kubectl get pods</strong>Lists all the pods in the current namespace, providing their status and other details.",
-         "point1": "<strong>kubectl describe pod <podName></strong> Displays detailed information about a specific pod, including events and conditions that can help diagnose issues.",
-         "point2": "<strong>kubectl logs <podName></strong> Fetches the logs from a specific pod, which is crucial for troubleshooting application issues.",
-         "point3": "<strong>kubectl exec -it <podName> -- /bin/bash</strong> Opens an interactive terminal session inside a running pod, allowing you to run commands directly within the container.",
-         "point4": "<strong>check cluster health: cmd:</strong> etcdctl cluster-health",
-         "point5":"<strong>kubectl get nodes</strong> Lists all nodes in the cluster, providing information about their status and resource usage.",
-          "point6":"<strong>kubectl cluster-info</strong> Displays the addresses of the Kubernetes master and services, helping you understand the cluster's configuration ",
-          "image": "<img src=\"https://8mwhz4-my.sharepoint.com/personal/nmdrafiq_8mwhz4_onmicrosoft_com/Documents/Required/images/rtf-commands.png?Web=1\" style=\"width: 60%;\"> "
-       },
-       {
          "id": 83,
          "title": "Handling High Availability, Performance optimization",
          "content": "Cloudhub: Multi-Worker Deployment, Global Load Balancing, Auto-Scaling",
@@ -1107,14 +1095,14 @@
        {
          "id":93,
          "title": "define flex gateway",
-         "content": "flex gateway enables us to manage and secure apis across multiple environments",
-         "point1": "example: if a customer places an order through the app",
-         "point2": "this request routes through the flex gateway which acts as an entry point",
-         "point3": "it authenticates using oauth 2.0 that customer authorized to access the api",
-         "point4": "it provides, authentication and authorization, real time analysis and insights, scalability and high availability",
+         "content": "flex gateway enables us to manage and secure apis across multiple environments,  Govern all APIs (even non-Mule) centrally via Anypoint Platform, ensuring consistent policy enforcement and monitoring",
+         "point1": "we will have 2 options 1: Managed Flex Gateway (Need to have license) 2: Self-Managed Flex Gateway",
+         "point2": "Self Managed Flex Gateway: we need to install it on our own server (Red Hat Enterprise Linux 9)",
+         "point3": "Docker Setup: we need to install docker, pull the image, run the container (command:docker pull mulesoft/flex-gateway:latest)",
+         "point4": "Need to register, select docker as deployment type, we will get steps in page (for registration and starting)",
          "point5":"",
           "point6":"",
-          "image": "<img src=\"\" style=\"width: 60%;\"> "
+          "image": "<img src=\"https://docs.mulesoft.com/gateway/latest/_images/gateway-quickstart-add-gateway.png\" style=\"width: 60%;\"> "
        },
        {
          "id":94,
@@ -1322,27 +1310,15 @@
        },
        {
          "id":111,
-         "title": "Openshift ROSA?",
-         "content": "From Runtime Manager-> Select Runtime Fabrics -> Create Runtime Fabric -> Select Openshift Container Platform",
-         "point1": "It will provide settings, to create namespace, secrets and some activation data",
-         "point2": "Navigate to openshift platform -> console-openshift.console ",
-         "point3": "Create a namespace in your OpenShift cluster for the Runtime Fabric installation.",
-         "point4": "Once the Runtime Fabric is installed, you can deploy MuleSoft workloads (e.g., APIs or applications) to the OpenShift cluster.",
+         "title": "What is ROSA and its key components?",
+         "content": "Red Hat OpenShift Service on AWS\n-> Setup the OpenShift container platform\n-> Create Runtime Fabric\n-> Install Runtime Fabric on Red Hat OpenShift\n-> Setup an ingress",
+         "point1": "In order to successfully deploy Mule applications to Runtime Fabric we need\nAn OpenShift cluster\n-> we can setup on bare metal or any public provider\n-> Need to have License (licence.lic)",
+         "point2": "First Step (steps will be provided in the platform)\nThe first step is to create a namespace, which provides a mechanism to scope resources in a cluster (Command: os create ns rtf)\n-> Operator will be installed with activation data\n-> configure the ingress template using command (\noc create -f ingress_template.yaml)",
+         "point3": "",
+         "point4": "",
          "point5": "",
-          "point6":"",
-          "image": "<img src=\"\" style=\"width: 60%;\"> "
-       },
-       {
-         "id":1121,
-         "title": "How to setup ROSA (Red Hat OpenShift Service on AWS) in MuleSoft?",
-         "content": "ROSA setup in MuleSoft involves several steps to integrate Red Hat OpenShift Service on AWS with your MuleSoft Runtime Fabric.",
-         "point1": "<strong>Prerequisites:</strong><br>1. AWS Account with appropriate permissions<br>2. Red Hat OpenShift Service on AWS cluster<br>3. MuleSoft Anypoint Platform account with Runtime Fabric entitlement",
-         "point2": "<strong>Setup Steps:</strong><br>1. Log into Anypoint Platform and navigate to Runtime Manager<br>2. Select Runtime Fabrics and click 'Create Runtime Fabric'<br>3. Choose 'OpenShift Container Platform' as the platform type",
-         "point3": "<strong>Cluster Configuration:</strong><br>1. Configure your ROSA cluster with required resources<br>2. Ensure network connectivity between ROSA and MuleSoft<br>3. Set up necessary security groups and IAM roles",
-         "point4": "<strong>Runtime Fabric Installation:</strong><br>1. Generate activation data from Anypoint Platform<br>2. Apply the activation data to your ROSA cluster<br>3. Deploy Runtime Fabric operator and required components",
-         "point5": "<strong>Post-Installation:</strong><br>1. Verify Runtime Fabric status in Anypoint Platform<br>2. Configure monitoring and logging<br>3. Set up auto-scaling policies if needed",
-         "point6": "<strong>Best Practices:</strong><br>1. Use dedicated namespaces for MuleSoft workloads<br>2. Implement proper resource limits<br>3. Set up monitoring and alerting<br>4. Regular backup and disaster recovery planning",
-         "image": "<img src=\"https://www.redhat.com/cms/managed-files/styles/wysiwyg_full_width/s3/2021-05/ROSA_Architecture.png\" style=\"width: 80%;\">"
+         "point6": "",
+         "image": ""
        },
        {
          "id":1131,
@@ -1355,18 +1331,6 @@
          "point5": "<strong>Verification Steps:</strong><br>1. Check server status<br>2. Verify license status in Runtime Manager<br>3. Test application deployments<br>4. Monitor logs for any issues",
          "point6": "<strong>Best Practices:</strong><br>1. Always backup before changes<br>2. Test in non-production first<br>3. Schedule maintenance windows<br>4. Keep documentation updated<br>5. Monitor system resources",
          "image": "<img src=\"https://docs.mulesoft.com/runtime-manager/_images/on-premises-server-setup.png\" style=\"width: 80%;\">"
-       },
-       {
-         "id": 1111,
-         "title": "What is ROSA and its key components?",
-         "content": "ROSA (Red Hat OpenShift Service on AWS) is a managed OpenShift service that combines the power of Red Hat OpenShift with the scalability and reliability of AWS.",
-         "point1": "<strong>Key Components:</strong><br>1. OpenShift Container Platform<br>   - Kubernetes-based container platform<br>   - Provides container orchestration<br>   - Manages application lifecycle<br><br>2. AWS Infrastructure<br>   - EC2 instances for worker nodes<br>   - EBS for persistent storage<br>   - VPC for networking<br>   - IAM for access control",
-         "point2": "<strong>Architecture Layers:</strong><br>1. Control Plane<br>   - Managed by Red Hat<br>   - Handles cluster management<br>   - Provides API server<br>   - Manages etcd<br><br>2. Infrastructure Nodes<br>   - Router components<br>   - Registry components<br>   - Monitoring components",
-         "point3": "<strong>Worker Nodes:</strong><br>1. Run application workloads<br>2. Managed by customer<br>3. Auto-scaling capabilities<br>4. Multiple availability zones",
-         "point4": "<strong>Integration with MuleSoft:</strong><br>1. Runtime Fabric deployment<br>2. Containerized Mule applications<br>3. High availability configuration<br>4. Auto-scaling capabilities",
-         "point5": "<strong>Security Features:</strong><br>1. Network isolation<br>2. Role-based access control<br>3. Pod security policies<br>4. Network policies",
-         "point6": "<strong>Monitoring and Logging:</strong><br>1. Prometheus for metrics<br>2. Grafana for visualization<br>3. Elasticsearch for logging<br>4. Alert manager for notifications",
-         "image": "<img src=\"https://www.redhat.com/cms/managed-files/styles/wysiwyg_full_width/s3/2021-05/ROSA_Architecture.png\" style=\"width: 80%;\">"
        },
        {
          "id": 112,

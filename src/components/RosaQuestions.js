@@ -62,7 +62,7 @@ const RosaQuestions = () => {
 
   const renderQuestionContent = (question) => (
     <div key={question.id} id={`question-${question.id}`} className="question-card">
-      <h3>{question.title}</h3>
+      <h3>{question.id}. {question.title}</h3>
       <div dangerouslySetInnerHTML={{ __html: question.content }} />
       {question.point1 && <div dangerouslySetInnerHTML={{ __html: question.point1 }} />}
       {question.point2 && <div dangerouslySetInnerHTML={{ __html: question.point2 }} />}
@@ -111,7 +111,7 @@ const RosaQuestions = () => {
                 scrollToQuestion(question.id);
               }}
             >
-              {question.title}
+              {question.id}. {question.title}
             </a>
           ))}
         </div>

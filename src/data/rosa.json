@@ -2,14 +2,14 @@
   {
     "id": 1,
     "title": "What is ROSA and its key components?",
-    "content": "ROSA (Red Hat OpenShift Service on AWS) is a managed OpenShift service that combines the power of Red Hat OpenShift with the scalability and reliability of AWS.",
-    "point1": "<strong>Key Components:</strong><br>1. OpenShift Container Platform<br>   - Kubernetes-based container platform<br>   - Provides container orchestration<br>   - Manages application lifecycle<br><br>2. AWS Infrastructure<br>   - EC2 instances for worker nodes<br>   - EBS for persistent storage<br>   - VPC for networking<br>   - IAM for access control",
-    "point2": "<strong>Architecture Layers:</strong><br>1. Control Plane<br>   - Managed by Red Hat<br>   - Handles cluster management<br>   - Provides API server<br>   - Manages etcd<br><br>2. Infrastructure Nodes<br>   - Router components<br>   - Registry components<br>   - Monitoring components",
-    "point3": "<strong>Worker Nodes:</strong><br>1. Run application workloads<br>2. Managed by customer<br>3. Auto-scaling capabilities<br>4. Multiple availability zones",
-    "point4": "<strong>Integration with MuleSoft:</strong><br>1. Runtime Fabric deployment<br>2. Containerized Mule applications<br>3. High availability configuration<br>4. Auto-scaling capabilities",
-    "point5": "<strong>Security Features:</strong><br>1. Network isolation<br>2. Role-based access control<br>3. Pod security policies<br>4. Network policies",
-    "point6": "<strong>Monitoring and Logging:</strong><br>1. Prometheus for metrics<br>2. Grafana for visualization<br>3. Elasticsearch for logging<br>4. Alert manager for notifications",
-    "image": "<img src=\"https://www.redhat.com/cms/managed-files/styles/wysiwyg_full_width/s3/2021-05/ROSA_Architecture.png\" style=\"width: 80%;\">"
+    "content": "Red Hat OpenShift Service on AWS\n-> Setup the OpenShift container platform\n-> Create Runtime Fabric\n-> Install Runtime Fabric on Red Hat OpenShift\n-> Setup an ingress",
+    "point1": "In order to successfully deploy Mule applications to Runtime Fabric we need\nAn OpenShift cluster\n-> we can setup on bare metal or any public provider\n-> Need to have License (licence.lic)",
+    "point2": "First Step (steps will be provided in the platform)\nThe first step is to create a namespace, which provides a mechanism to scope resources in a cluster (Command: os create ns rtf)\n-> Operator will be installed with activation data\n-> configure the ingress template using command (\noc create -f ingress_template.yaml)",
+    "point3": "",
+    "point4": "",
+    "point5": "",
+    "point6": "",
+    "image": ""
   },
   {
     "id": 3,

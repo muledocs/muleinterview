@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant U as User
+    participant CP as Control Plane
+    participant OC as OpenShift CLI
+    participant RTF as Runtime Fabric
+    participant K8s as Kubernetes
+
+    U->>CP: Initialize RTF Installation
+    CP-->>U: Generate Installation Token
+    U->>OC: Login to OpenShift Cluster
+    U->>K8s: Create Namespace
+    U->>K8s: Apply RBAC Policies
+    U->>K8s: Deploy RTF Operator
+    K8s-->>RTF: Create RTF Resources
+    RTF->>CP: Register with Token
+    CP-->>RTF: Validate & Activate
+    RTF->>K8s: Deploy Core Services
+    K8s-->>RTF: Services Ready
+    RTF->>CP: Report Status
+    CP-->>U: Installation Complete 
