@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/muleinterview/static/css/main.275b6193.css",
+    "main.css": "/muleinterview/static/css/main.ad7be0c0.css",
     "main.js": "/muleinterview/static/js/main.10c81c4d.js",
     "static/js/453.5012a750.chunk.js": "/muleinterview/static/js/453.5012a750.chunk.js",
     "index.html": "/muleinterview/index.html",
-    "main.275b6193.css.map": "/muleinterview/static/css/main.275b6193.css.map",
+    "main.ad7be0c0.css.map": "/muleinterview/static/css/main.ad7be0c0.css.map",
     "main.10c81c4d.js.map": "/muleinterview/static/js/main.10c81c4d.js.map",
     "453.5012a750.chunk.js.map": "/muleinterview/static/js/453.5012a750.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.275b6193.css",
+    "static/css/main.ad7be0c0.css",
     "static/js/main.10c81c4d.js"
   ]
 }
