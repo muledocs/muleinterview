@@ -1,0 +1,36 @@
+graph TB
+    subgraph RTF["Runtime Fabric Components"]
+        subgraph Core["Core Services"]
+            direction TB
+            AE["Activation Engine"]
+            RP["Runtime Plane"]
+            AM["Agent Manager"]
+            LM["License Manager"]
+        end
+
+        subgraph Data["Data Services"]
+            direction TB
+            Redis["Redis Cache"]
+            AMQP["AMQP Broker"]
+            DB["Internal Database"]
+        end
+
+        subgraph Monitoring["Monitoring & Logging"]
+            direction TB
+            Prometheus["Prometheus"]
+            Grafana["Grafana"]
+            EFK["EFK Stack"]
+            Alert["Alert Manager"]
+        end
+
+        subgraph Security["Security Components"]
+            direction TB
+            Auth["Authentication"]
+            Cert["Certificate Manager"]
+            Vault["Secret Management"]
+        end
+
+        Core --> Data
+        Core --> Monitoring
+        Core --> Security
+    end 
